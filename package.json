@@ -1,0 +1,56 @@
+{
+  "name": "clutter-mcp",
+  "version": "0.1.3",
+  "mcpName": "io.github.michaelhologram/clutter-mcp",
+  "description": "MCP server for Clutter — let an AI agent generate believable synthetic companies, documents, data and metadata (e.g. to fill SharePoint or other test/demo systems) via the Clutter API.",
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "clutter",
+    "synthetic-data",
+    "test-data",
+    "dummy-data",
+    "synthetic-documents",
+    "sharepoint",
+    "ai-agent",
+    "llm"
+  ],
+  "homepage": "https://clutter.run",
+  "bugs": {
+    "url": "https://github.com/michaelhologram/clutter-mcp/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michaelhologram/clutter-mcp.git"
+  },
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "bin": {
+    "clutter-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx src/index.ts",
+    "start": "node dist/index.js",
+    "clean": "rm -rf dist *.tsbuildinfo",
+    "prepublishOnly": "npm run clean && npm run build"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0"
+  }
+}

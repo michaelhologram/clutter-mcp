@@ -1,0 +1,41 @@
+{
+  "manifest_version": "0.3",
+  "name": "clutter-mcp",
+  "display_name": "Clutter",
+  "version": "0.1.3",
+  "description": "Generate synthetic companies, documents, and data via the Clutter API — e.g. to fill SharePoint test/demo systems.",
+  "long_description": "Clutter MCP wraps the Clutter REST API as 19 tools that generate realistic synthetic organizations, documents, and structured data. Useful for populating SharePoint and other systems with test or demo content. Requires a Clutter API key (mint one at https://clutter.run).",
+  "author": { "name": "Michael Hologram", "url": "https://clutter.run" },
+  "homepage": "https://clutter.run",
+  "repository": { "type": "git", "url": "https://github.com/michaelhologram/clutter-mcp" },
+  "license": "MIT",
+  "keywords": ["synthetic-data", "test-data", "sharepoint", "documents", "clutter"],
+  "server": {
+    "type": "node",
+    "entry_point": "node_modules/clutter-mcp/dist/index.js",
+    "mcp_config": {
+      "command": "npx",
+      "args": ["-y", "clutter-mcp"],
+      "env": {
+        "CLUTTER_API_KEY": "${user_config.clutter_api_key}",
+        "CLUTTER_API_URL": "${user_config.clutter_api_url}"
+      }
+    }
+  },
+  "user_config": {
+    "clutter_api_key": {
+      "type": "string",
+      "title": "Clutter API Key",
+      "description": "Your Clutter API key (mint one at https://clutter.run → Settings).",
+      "sensitive": true,
+      "required": true
+    },
+    "clutter_api_url": {
+      "type": "string",
+      "title": "Clutter API Base URL",
+      "description": "Override the Clutter API base URL. Defaults to https://clutter.run/api.",
+      "default": "https://clutter.run/api",
+      "required": false
+    }
+  }
+}
