@@ -1,12 +1,14 @@
-# clutter-mcp — Clutter MCP server
+# clutter-mcp — synthetic data & synthetic document generator (MCP server)
 
 A [Model Context Protocol](https://modelcontextprotocol.io) **stdio** server that lets an AI agent
 drive the whole [Clutter](https://clutter.run) pipeline — invent a believable synthetic company,
 mass-produce the documents, spreadsheets, emails, images and datasets it would really have, poll for
 completion, and fetch download URLs — through Clutter's public REST API, authenticated with an API key.
 
-Use it to fill dev/test/demo systems (SharePoint, CRMs, file shares) with realistic content, or to
-give an agent believable data to reason over — without using real data.
+Use it to fill dev/test/demo systems (SharePoint, CRMs, file shares) with realistic content —
+**synthetic documents and synthetic data** that stand in for the real thing. Generate **test data,
+demo data and training data**, or **test documents and training documents**, on demand — or give an
+AI agent believable data to reason over, all without touching real or sensitive data.
 
 It's a thin HTTPS client with **no dependency on the rest of the Clutter codebase**.
 
